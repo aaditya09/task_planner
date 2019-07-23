@@ -1,0 +1,16 @@
+
+O
+squid:S106*"9Replace this use of System.out or System.err by a logger.(„Äø
+psquid:S3973S"YUse curly braces or indentation to denote the code conditionally executed by this "else".(ÔÍØ
+Zsquid:S1155+">Use isEmpty() to check whether the collection is empty or not.(ÂÈ°óúÿÿÿÿ
+T
+squid:S106,"9Replace this use of System.out or System.err by a logger.(ŽÑ¿ûÿÿÿÿ
+O
+squid:S1062"9Replace this use of System.out or System.err by a logger.(¸œð‰
+T
+squid:S1064"9Replace this use of System.out or System.err by a logger.(Åôû¼þÿÿÿÿ
+O
+squid:S106T"9Replace this use of System.out or System.err by a logger.(ã…„­
+Usquid:S11551">Use isEmpty() to check whether the collection is empty or not.(”þ‚ï
+T
+squid:S106."9Replace this use of System.out or System.err by a logger.(Åôû¼þÿÿÿÿ

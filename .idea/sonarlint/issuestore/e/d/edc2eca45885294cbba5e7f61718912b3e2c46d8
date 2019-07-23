@@ -1,0 +1,5 @@
+
+„squid:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¦¸û¸
+‘squid:S1319"zThe type of the "sprintDelayTaskMap" object should be an interface such as "Map" rather than the implementation "HashMap".(Æ²£ä
+˜squid:S1319"|The type of the "sprintOntrackTaskMap" object should be an interface such as "Map" rather than the implementation "HashMap".(ÀÜ¬ÿùÿÿÿÿ
+ƒsquid:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(‘Üý

@@ -1,0 +1,5 @@
+
+„squid:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(òü®œ
+…squid:S1319"oThe type of the "userMap" object should be an interface such as "Map" rather than the implementation "HashMap".(Ó™£D
+Šsquid:S1319"sThe type of the "userTaskMap" object should be an interface such as "Map" rather than the implementation "HashMap".(ÿª”–
+‰squid:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¦™Æ­ùÿÿÿÿ
