@@ -59,6 +59,15 @@ public class TaskService {
 	public void moveTask(Task task,Sprint sprint)
 	{
 		// similar to reassign task;
+
+		removeTaskForSprint(task);
+		addTaskForSprint(sprint, task);
+
+	}
+
+	private void removeTaskForSprint(Task task) {
+		taskRepository.removeTaskForSprint(task);
+		//sprintRepository.removeTask(sprint, task);
 	}
 
 	public Sprint getSprint(Task task) {

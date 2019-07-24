@@ -16,6 +16,7 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by swethat on 24/7/19.
@@ -81,13 +82,68 @@ public class DriverTest
         System.out.println("adding tasks to the sprint");
        // sprintService.addTask(sprint,task);
         System.out.println("displaying sprint..");
-        task1.updateState();
-        task1.updateState();
-        task1.updateState();
-        task1.updateState();
-        //task1.setStatus(TaskStatus.COMPLETED);
 
+
+         // Task Assignment
+        /* ===========================================================================*/
+        System.out.println("\n========== Initial Assignee ===========\n");
+        System.out.println("Assignee for task 1: " + task1.getAssignee().getUsername());
+
+        System.out.println("\n========== Initial User 1 tasks ===========\n");
+        System.out.println(user.getTasks());
+        System.out.println("\n=========================================\n");
+
+
+        User user2 = User.builder().username("user2").id("2").tasks(new HashSet<>()).build();
+
+        System.out.println("\n========== Initial User 2 tasks ===========\n");
+        System.out.println(user2.getTasks());
+        taskService.assignTask(task1, user2);
+        System.out.println("\n New Assignee for task 1: " + task1.getAssignee().getUsername());
+
+        System.out.println("\n========== Final User 2 tasks ===========\n");
+        System.out.println(user2.getTasks());
+        System.out.println("\n=========================================\n");
+
+        /*===============================================================================*/
+
+
+        // Remove tasks from the sprint
+        /*===============================================================================*/
+
+        System.out.println("\n========== Initial Sprint1 tasks ==========\n");
         sprintService.displaySprint(sprint);
+
+        Sprint sprint2 = Sprint.builder().id("TWO").taskList(new HashSet<>()).build();
+
+        sprintService.createSprint(sprint2);
+
+        System.out.println("\n========== Initial Sprint2 tasks ==========\n");
+        sprintService.displaySprint(sprint2);
+
+        System.out.println("\n========== Moving task1 to Sprint2  ==========\n");
+        taskService.moveTask(task1, sprint2);
+
+        System.out.println("\n========== Final Sprint1 tasks ==========\n");
+        sprintService.displaySprint(sprint);
+
+        System.out.println("\n========== Final Sprint2 tasks ==========\n");
+        sprintService.displaySprint(sprint2);
+        /*===============================================================================*/
+
+
+        // State updation
+        /*===============================================================================*/
+
+        /*===============================================================================*/
+
+        /*task1.updateState();
+        task1.updateState();
+        task1.updateState();
+        task1.updateState();
+        *///task1.setStatus(TaskStatus.COMPLETED);
+
+        //sprintService.displaySprint(sprint);
 
     }
 }

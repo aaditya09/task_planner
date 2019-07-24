@@ -6,6 +6,8 @@ import com.app.planner.pojo.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -52,5 +54,11 @@ public class TaskRepository {
 	public void addTaskForSprint(Sprint sprint , Task task)
 	{
 		task.setSprint(sprint);
+	}
+
+	public void removeTaskForSprint(Task task) {
+		Set<Task> existingTasks = task.getSprint().getTaskList();
+		existingTasks.remove(task);
+		task.getSprint().setTaskList(existingTasks);
 	}
 }

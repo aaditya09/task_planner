@@ -42,4 +42,9 @@ public class SprintRepository {
 		sprint.setTaskList(tasks);
 	}
 
+	public void removeTask(Sprint sprint, Task task) {
+		Set<Task> tasks = sprint.getTaskList();
+		tasks.remove(task);
+		sprint.setTaskList(tasks);
+	}
 }
