@@ -19,12 +19,11 @@ public class Task {
 	private User assignee;
 	private Sprint sprint;
 	private LocalDate createdDate;
+	private TaskState inprogressState;
+	private TaskState completedState;
+	private TaskState openState;
 
 
-	/*@Autowired*/
-	TaskState openState;
-
-	@Autowired
 	public Task(String id,
 				String title,
 				User creator,
@@ -42,23 +41,58 @@ public class Task {
 		this.assignee = assignee;
 		this.sprint = sprint;
 		this.createdDate = createdDate;
-		this.currentState = openState;
+		this.currentState = currentState;
 	}
+
+/*
+
+	/*@Autowired*//*
+	TaskState openState;
 
 	@Autowired
 	TaskState inprogressState;
 
 	@Autowired
 	TaskState completedState;
+*/
 
-	private TaskState currentState = openState;
+
+	public TaskState getInprogressState() {
+		return new InprogressState();
+	}
+
+	public void setInprogressState(TaskState inprogressState) {
+		this.inprogressState = inprogressState;
+	}
+
+	public TaskState getCompletedState() {
+		return new CompletedState();
+	}
+
+	public void setCompletedState(TaskState completedState) {
+		this.completedState = completedState;
+	}
+
+	public TaskState getOpenState() {
+		return new OpenState();
+	}
+
+	public void setOpenState(TaskState openState) {
+		this.openState = openState;
+	}
+
+	public TaskState getCurrentState() {
+		return  currentState;
+	}
+
+	private TaskState currentState = new OpenState();
 
 	public TaskState getSecondState() {
-		return  inprogressState;
+		return new InprogressState();
 	}
 
 	public TaskState getThirdState() {
-		return completedState;
+		return new CompletedState();
 	}
 
 	public TaskState getFourthState() {

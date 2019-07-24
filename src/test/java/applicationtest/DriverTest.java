@@ -139,11 +139,18 @@ public class DriverTest
 
         /*===============================================================================*/
 
-        /*task1.updateState();
-        /task1.updateState();
+        System.out.println("\n========== Moving task 1st time ==========\n");
         task1.updateState();
+
+        System.out.println("\n========== Moving task 2nd time ==========\n");
         task1.updateState();
-        *////task1.setStatus(TaskStatus.COMPLETED);
+
+        System.out.println("\n========== Moving task 3rd time ==========\n");
+        task1.updateState();
+
+        System.out.println("\n========== Moving task 4th time ==========\n");
+        task1.updateState();
+        //task1.setStatus(TaskStatus.COMPLETED);
 
         //sprintService.displaySprint(sprint);
 

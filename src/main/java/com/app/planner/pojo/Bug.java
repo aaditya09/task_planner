@@ -10,6 +10,8 @@ import java.time.LocalDate;
 @Data
 public class Bug extends Task {
 
+	private FixedState fixedState;
+
 	@Builder
 	public Bug(String id,
 			   String title,
@@ -30,11 +32,20 @@ public class Bug extends Task {
 	private Severity severity;
 
 
-	@Autowired
+	/*@Autowired
 	FixedState fixedState;
+*/
+
+	public FixedState getFixedState() {
+		return new FixedState();
+	}
+
+	public void setFixedState(FixedState fixedState) {
+		this.fixedState = fixedState;
+	}
 
 	@Override
 	public TaskState getThirdState() {
-		return fixedState;
+		return new FixedState();
 	}
 }

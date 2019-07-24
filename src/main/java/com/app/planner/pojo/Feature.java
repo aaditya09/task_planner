@@ -13,6 +13,16 @@ public class Feature extends Task {
 
 	private String summary;
 	private Impact impact;
+	private TaskState testingState;
+	private TaskState deployedState;
+
+/*
+	@Autowired
+	TaskState testingState;
+
+	@Autowired
+	TaskState deployedState;
+*/
 
 	@Builder
 	public Feature(String id,
@@ -40,21 +50,31 @@ public class Feature extends Task {
 		this.impact = impact;
 	}
 
-	@Autowired
-	TaskState testingState;
 
-	@Autowired
-	TaskState deployedState;
+	public TaskState getTestingState() {
+		return new TestingState();
+	}
 
+	public void setTestingState(TaskState testingState) {
+		this.testingState = testingState;
+	}
+
+	public TaskState getDeployedState() {
+		return new DeployedState();
+	}
+
+	public void setDeployedState(TaskState deployedState) {
+		this.deployedState = deployedState;
+	}
 
 	@Override
 	public TaskState getThirdState() {
-		return testingState;
+		return new TestingState();
 	}
 
 	@Override
 	public TaskState getFourthState() {
-		return deployedState;
+		return new DeployedState();
 	}
 
 }
