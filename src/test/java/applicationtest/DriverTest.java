@@ -135,13 +135,15 @@ public class DriverTest
         // State updation
         /*===============================================================================*/
 
+        // Null Pointer Issue is due to using Autowired inside the NON Comppnnet class like Task, Story , Bug etc.  
+
         /*===============================================================================*/
 
-      //  task1.updateState();
-        /* task1.updateState();
+        /*task1.updateState();
+        /task1.updateState();
         task1.updateState();
         task1.updateState();
-        *///task1.setStatus(TaskStatus.COMPLETED);
+        *////task1.setStatus(TaskStatus.COMPLETED);
 
         //sprintService.displaySprint(sprint);
 
