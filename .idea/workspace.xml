@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a636550d-d0ae-4774-8ca9-93bd3aaadebc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/CommandLineAppStartupRunner.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/TaskPlanner.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/TaskPlanner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Bug.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Bug.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Feature.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Feature.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Sprint.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Sprint.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Story.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Story.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Task.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/Task.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/TaskState.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/TaskState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/User.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/pojo/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/repository/SprintRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/repository/SprintRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/repository/TaskRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/repository/TaskRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/repository/UserRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/repository/UserRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/service/SprintService.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/service/SprintService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/service/TaskService.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/service/TaskService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/app/planner/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/app/planner/service/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TaskPlanner.iml" afterPath="$PROJECT_DIR$/TaskPlanner.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/app/planner/repository/SprintRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/app/planner/repository/SprintRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/app/planner/repository/TaskRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/app/planner/repository/TaskRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/app/planner/service/TaskService.java" afterPath="$PROJECT_DIR$/src/main/java/com/app/planner/service/TaskService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/applicationtest/DriverTest.java" afterPath="$PROJECT_DIR$/src/test/java/applicationtest/DriverTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,10 +25,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DriverTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DriverTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/applicationtest/DriverTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
+            <state relative-caret-position="313">
               <caret line="145" column="10" lean-forward="false" selection-start-line="145" selection-start-column="10" selection-end-line="145" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -68,12 +47,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaskService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/app/planner/service/TaskService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="355">
+              <caret line="68" column="30" lean-forward="true" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+              <folding>
+                <element signature="e#1624#1625#0" expanded="true" />
+                <element signature="e#1671#1672#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +75,8 @@
       <file leaf-file-name="TaskRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/app/planner/repository/TaskRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="60" column="8" lean-forward="false" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+            <state relative-caret-position="333">
+              <caret line="58" column="16" lean-forward="false" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -182,8 +164,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/app/planner/pojo/Bug.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/planner/repository/TaskRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/planner/repository/SprintRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app/planner/service/TaskService.java" />
         <option value="$PROJECT_DIR$/src/test/java/applicationtest/DriverTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app/planner/service/TaskService.java" />
       </list>
     </option>
   </component>
@@ -1056,14 +1038,11 @@
       <workItem from="1563910781552" duration="1096000" />
       <workItem from="1563913240435" duration="2889000" />
       <workItem from="1563916158872" duration="2141000" />
-      <workItem from="1563998161016" duration="5042000" />
+      <workItem from="1563998161016" duration="5234000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DriverTest_testSprint - 2019.07.25 at 02h 18m 09s.xml">
-      <configuration name="DriverTest.testSprint" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DriverTest_testSprint - 2019.07.25 at 02h 20m 16s.xml">
       <configuration name="DriverTest.testSprint" configurationId="JUnit" />
     </history-entry>
@@ -1091,9 +1070,12 @@
     <history-entry file="DriverTest_testSprint - 2019.07.25 at 03h 05m 16s.xml">
       <configuration name="DriverTest.testSprint" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DriverTest_testSprint - 2019.07.25 at 03h 09m 07s.xml">
+      <configuration name="DriverTest.testSprint" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11168000" />
+    <option name="totallyTimeSpent" value="11360000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="37" width="1920" height="522" extended-state="0" />
@@ -1116,7 +1098,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7641278" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7641278" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1532,14 +1514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/planner/repository/TaskRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="60" column="8" lean-forward="false" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/planner/repository/SprintRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
@@ -1547,22 +1521,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/planner/service/TaskService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/planner/pojo/Severity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1576,10 +1534,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applicationtest/DriverTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
+        <state relative-caret-position="313">
           <caret line="145" column="10" lean-forward="false" selection-start-line="145" selection-start-column="10" selection-end-line="145" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/planner/pojo/Severity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/planner/repository/TaskRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="58" column="16" lean-forward="false" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/planner/service/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="68" column="30" lean-forward="true" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+          <folding>
+            <element signature="e#1624#1625#0" expanded="true" />
+            <element signature="e#1671#1672#0" expanded="true" />
           </folding>
         </state>
       </provider>

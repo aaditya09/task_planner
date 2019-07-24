@@ -67,7 +67,6 @@ public class TaskService {
 
 	private void removeTaskForSprint(Task task) {
 		taskRepository.removeTaskForSprint(task);
-		//sprintRepository.removeTask(sprint, task);
 	}
 
 	public Sprint getSprint(Task task) {
