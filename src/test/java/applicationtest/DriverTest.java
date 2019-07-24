@@ -137,8 +137,8 @@ public class DriverTest
 
         /*===============================================================================*/
 
-        /*task1.updateState();
         task1.updateState();
+        /* task1.updateState();
         task1.updateState();
         task1.updateState();
         *///task1.setStatus(TaskStatus.COMPLETED);
