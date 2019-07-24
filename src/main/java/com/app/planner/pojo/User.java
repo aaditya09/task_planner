@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Set;
+
 @Data
 @Component
 @Builder
@@ -16,20 +18,7 @@ public class User {
 	private String id;
 	private String username;
 
-	public String getId() {
-		return id;
-	}
+	private Set<Task> tasks ;
 
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
 
 }

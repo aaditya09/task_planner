@@ -1,41 +1,55 @@
 package com.app.planner.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.List;
 
 
 
 @Data
-@SuperBuilder
-@AllArgsConstructor
-@NoArgsConstructor
 public class Task {
 
+	private String id;
 	private String title;
-	private String creator;
+	private User creator;
 	private LocalDate date;
 	private TaskStatus status;
 	private String type;
 	private User assignee;
-	private List<Task> subTasks;
+	private Sprint sprint;
+	private LocalDate createdDate;
 
 
-	@Autowired
-	OpenState openState;
-
-	@Autowired
-	InprogressState inprogressState;
+	/*@Autowired*/
+	TaskState openState;
 
 	@Autowired
-	CompletedState completedState;
+	public Task(String id,
+				String title,
+				User creator,
+				LocalDate date,
+				TaskStatus status,
+				String type,
+				User assignee, Sprint sprint, LocalDate createdDate, TaskState currentState)
+	{
+		this.id = id;
+		this.title = title;
+		this.creator = creator;
+		this.date = date;
+		this.status = status;
+		this.type = type;
+		this.assignee = assignee;
+		this.sprint = sprint;
+		this.createdDate = createdDate;
+		this.currentState = openState;
+	}
+
+	@Autowired
+	TaskState inprogressState;
+
+	@Autowired
+	TaskState completedState;
 
 	private TaskState currentState = openState;
 
@@ -51,13 +65,6 @@ public class Task {
 		return null;
 	}
 
-	public List<Task> getSubTasks() {
-		return subTasks;
-	}
-
-	public void setSubTasks(List<Task> subTasks) {
-		this.subTasks = subTasks;
-	}
 
 	public User getAssignee() {
 		return assignee;
@@ -83,11 +90,11 @@ public class Task {
 		this.title = title;
 	}
 
-	public String getCreator() {
+	public User getCreator() {
 		return creator;
 	}
 
-	public void setCreator(String creator) {
+	public void setCreator(User creator) {
 		this.creator = creator;
 	}
 
@@ -113,6 +120,11 @@ public class Task {
 
 	public void setCurrentState(TaskState state) {
 		this.currentState = state;
+	}
+
+	public void printTitle()
+	{
+		System.out.println("Title => "+getTitle());
 	}
 
 }

@@ -1,19 +1,31 @@
 package com.app.planner.pojo;
 
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
-import org.springframework.stereotype.Component;
 
-@AllArgsConstructor
-@NoArgsConstructor
+import java.time.LocalDate;
+
 @Data
-@SuperBuilder
 public class Bug extends Task {
+
+	@Builder
+	public Bug(String id,
+			   String title,
+			   User creator,
+			   LocalDate date,
+			   TaskStatus status,
+			   String type,
+			   User assignee,
+			   Sprint sprint,
+			   LocalDate createdDate,
+			   TaskState currentState,
+			   Severity severity)
+	{
+		super(id, title, creator, date, status, type, assignee, sprint, createdDate, currentState);
+		this.severity = severity;
+	}
 
 	private Severity severity;
 

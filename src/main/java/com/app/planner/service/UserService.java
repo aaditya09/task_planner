@@ -1,15 +1,14 @@
 package com.app.planner.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.app.planner.pojo.Task;
 import com.app.planner.pojo.User;
 import com.app.planner.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Service
@@ -28,44 +27,30 @@ public class UserService {
 		userRepository.addUser(user);
 	}
 
-	public void addTasktoUser(Task task, User user) {
 
-		User oldUser = task.getAssignee();
-		if (oldUser != null) {
-			userRepository.getUserTaskMap().get(oldUser.getId()).get(task.getType()).remove(task);
-
-		}
-
-		task.setAssignee(user);
-		HashMap<String, List<Task>> taskMap = userRepository.getUserTaskMap().getOrDefault(user.getId(),
-				new HashMap<>());
-		List<Task> tasks = taskMap.getOrDefault(task.getType(), new ArrayList<>());
-		tasks.add(task);
-		taskMap.put(task.getType(), tasks);
-		userRepository.getUserTaskMap().put(user.getId(), taskMap);
-	}
 
 	public void getUserTasks(User user) {
-		HashMap<String, List<Task>> taskMap = userRepository.getUserTaskMap().getOrDefault(user.getId(),
+		HashMap<String, Set<Task>> taskMap = userRepository.getUserTaskTypeTrack().getOrDefault(user.getId(),
 				new HashMap<>());
 		System.out.println("User ==> " + user.getUsername());
 		Set<String> taskTypes = taskMap.keySet();
 		for (String type : taskTypes) {
 			System.out.println("Task Type => " + type);
-			List<Task> taskList = taskMap.get(type);
+			Set<Task> taskList = taskMap.getOrDefault(type,new HashSet<>());
 			for (Task task : taskList) {
-				System.out.println("Title => " + task.getTitle());
+				task.printTitle();
+				//System.out.println("Title => " + task.getTitle());
 				System.out.println("Sprint => ");
-				if (taskService.getSprint(task) != null)
+				if (task.getSprint() != null)
 					System.out.println(taskService.getSprint(task).getId());
 
-				if (task.getSubTasks() != null && task.getSubTasks().size() != 0) {
+			/*	if (task.getSubTasks() != null && task.getSubTasks().size() != 0) {
 					System.out.println("SubTrack");
 					for (Task subTask : task.getSubTasks()) {
 						System.out.println(subTask.getTitle());
 					}
 
-				}
+				}*/
 			}
 
 		}

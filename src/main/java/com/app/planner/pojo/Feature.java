@@ -1,30 +1,50 @@
 package com.app.planner.pojo;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 
 @Data
-@SuperBuilder
-@AllArgsConstructor
-@NoArgsConstructor
 public class Feature extends Task {
 
 	private String summary;
 	private Impact impact;
 
+	@Builder
+	public Feature(String id,
+				   String title,
+				   User creator,
+				   LocalDate date,
+				   TaskStatus status,
+				   String type,
+				   User assignee,
+				   Sprint sprint,
+				   LocalDate createdDate,
+				   TaskState currentState, String summary, Impact impact)
+	{
+		super(id,
+			  title,
+			  creator,
+			  date,
+			  status,
+			  type,
+			  assignee,
+			  sprint,
+			  createdDate,
+			  currentState);
+		this.summary = summary;
+		this.impact = impact;
+	}
 
 	@Autowired
-	TestingState testingState;
+	TaskState testingState;
 
 	@Autowired
-	DeployedState deployedState;
+	TaskState deployedState;
 
 
 	@Override

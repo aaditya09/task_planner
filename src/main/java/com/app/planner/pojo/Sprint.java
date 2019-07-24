@@ -2,12 +2,8 @@ package com.app.planner.pojo;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
-import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.Set;
 
 
 @Data
@@ -15,23 +11,6 @@ import java.util.List;
 public class Sprint {
 
 	private String id;
-	private List<Task> taskList;
-
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public List<Task> getOnTrackTaskList() {
-		return taskList;
-	}
-
-	public void setOnTrackTaskList(List<Task> onTrackTaskList) {
-		this.taskList = onTrackTaskList;
-	}
+	private Set<Task> taskList;
 
 }

@@ -1,16 +1,16 @@
 package com.app.planner.service;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.app.planner.pojo.Sprint;
 import com.app.planner.pojo.Task;
 import com.app.planner.pojo.TaskStatus;
 import com.app.planner.repository.SprintRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -27,66 +27,51 @@ public class SprintService {
 
 	public void createSprint(Sprint sprint) {
 		System.out.println("created sprint ");
-		sprintRepository.getSprintOntrackTaskMap().put(sprint.getId(), sprint.getOnTrackTaskList());
+		sprintRepository.addSprint(sprint);
+
 	}
 
 	public void deleteSprint(Sprint sprint) {
-		sprintRepository.getSprintOntrackTaskMap().remove(sprint.getId());
+
+		sprintRepository.deleteSprint(sprint);
 
 	}
 
 	public void displaySprint(Sprint sprint) {
 
-		updateAllDelayedTasks(sprint);
-		List<Task> onTrack = sprintRepository.getSprintOntrackTaskMap().get(sprint.getId());
-		List<Task> delayedTask = sprintRepository.getSprintDelayTaskMap().get(sprint.getId());
+		Set<Task> tasks = sprint.getTaskList();
+		Set<Task> delayedTasks = getAllDelayedTasks(tasks);
+		tasks.removeAll(delayedTasks);
 		System.out.println("Sprint title => " + sprint.getId());
-		if (onTrack != null && onTrack.size() > 0) {
+		if (tasks != null && tasks.size() > 0) {
 			System.out.println("On Track Tasks:");
-			for (Task task : onTrack)
+			for (Task task : tasks)
 				System.out.println(task.getTitle());
 		}
 
-		if (delayedTask != null && delayedTask.size() > 0) {
+		if (delayedTasks.size() > 0) {
 			System.out.println("Delayed Tasks:");
-			for (Task task : delayedTask)
+			for (Task task : delayedTasks)
 				System.out.println(task.getTitle());
 		}
 
 	}
 
-	private void updateAllDelayedTasks(Sprint sprint) {
-		if(sprint.getOnTrackTaskList() != null)
+	private Set<Task> getAllDelayedTasks(Set<Task> tasks) {
+		Set<Task> delayedTaskList =  new HashSet<>();
+		if(tasks != null)
 		{
-			List<Task> delayedTaskList = sprint.getOnTrackTaskList().stream()
-					.filter(task -> task.getStatus().equals(TaskStatus.COMPLETED)
+			 delayedTaskList = tasks.stream()
+					.filter(task -> ( !task.getStatus().equals(TaskStatus.COMPLETED) || !task.getStatus().equals(TaskStatus.DEPLOYED))
 							&& LocalDateTime.now().toLocalDate().isAfter(task.getDate()))
-					.collect(Collectors.toList());
+					.collect(Collectors.toSet());
 
-			List<Task> alreadyDelayedTasks = sprintRepository.getSprintDelayTaskMap().getOrDefault(sprint.getId(),new ArrayList<>());
-			alreadyDelayedTasks.addAll(delayedTaskList);
-			sprintRepository.getSprintDelayTaskMap().put(sprint.getId(), alreadyDelayedTasks);
+
 		}
 
-	}
-
-	public void addTask(Sprint sprint, Task task) {
-		List<Task> tasks = sprintRepository.getSprintOntrackTaskMap().getOrDefault(sprint.getId(), new ArrayList<>());
-		tasks.add(task);
-		sprintRepository.getSprintOntrackTaskMap().put(sprint.getId(), tasks);
-		taskService.addTask(sprint, task);
+		return delayedTaskList;
 
 	}
 
-	public void removeTask(Sprint sprint, Task task) {
-		List<Task> tasks = sprintRepository.getSprintOntrackTaskMap().getOrDefault(sprint.getId(), new ArrayList<>());
-		if (!tasks.isEmpty()) {
-			tasks.remove(task);
-			sprintRepository.getSprintOntrackTaskMap().put(sprint.getId(), tasks);
-			taskService.removeTask(task);
-		} else
-			System.out.println("cannot remove task");
-
-	}
 
 }
