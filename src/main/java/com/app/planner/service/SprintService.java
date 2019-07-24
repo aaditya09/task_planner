@@ -26,6 +26,7 @@ public class SprintService {
 	}
 
 	public void createSprint(Sprint sprint) {
+		System.out.println("created sprint ");
 		sprintRepository.getSprintOntrackTaskMap().put(sprint.getId(), sprint.getOnTrackTaskList());
 	}
 
@@ -40,13 +41,13 @@ public class SprintService {
 		List<Task> onTrack = sprintRepository.getSprintOntrackTaskMap().get(sprint.getId());
 		List<Task> delayedTask = sprintRepository.getSprintDelayTaskMap().get(sprint.getId());
 		System.out.println("Sprint title => " + sprint.getId());
-		if (onTrack.size() > 0) {
+		if (onTrack != null && onTrack.size() > 0) {
 			System.out.println("On Track Tasks:");
 			for (Task task : onTrack)
 				System.out.println(task.getTitle());
 		}
 
-		if (delayedTask.size() > 0) {
+		if (delayedTask != null && delayedTask.size() > 0) {
 			System.out.println("Delayed Tasks:");
 			for (Task task : delayedTask)
 				System.out.println(task.getTitle());
@@ -55,14 +56,17 @@ public class SprintService {
 	}
 
 	private void updateAllDelayedTasks(Sprint sprint) {
-		List<Task> delayedTaskList = sprint.getOnTrackTaskList().stream()
-				.filter(task -> task.getStatus().equals(TaskStatus.COMPLETED)
-						&& LocalDateTime.now().toLocalDate().isAfter(task.getDate()))
-				.collect(Collectors.toList());
+		if(sprint.getOnTrackTaskList() != null)
+		{
+			List<Task> delayedTaskList = sprint.getOnTrackTaskList().stream()
+					.filter(task -> task.getStatus().equals(TaskStatus.COMPLETED)
+							&& LocalDateTime.now().toLocalDate().isAfter(task.getDate()))
+					.collect(Collectors.toList());
 
-		List<Task> alreadyDelayedTasks = sprintRepository.getSprintDelayTaskMap().get(sprint.getId());
-		alreadyDelayedTasks.addAll(delayedTaskList);
-		sprintRepository.getSprintDelayTaskMap().put(sprint.getId(), alreadyDelayedTasks);
+			List<Task> alreadyDelayedTasks = sprintRepository.getSprintDelayTaskMap().getOrDefault(sprint.getId(),new ArrayList<>());
+			alreadyDelayedTasks.addAll(delayedTaskList);
+			sprintRepository.getSprintDelayTaskMap().put(sprint.getId(), alreadyDelayedTasks);
+		}
 
 	}
 

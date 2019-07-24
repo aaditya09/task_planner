@@ -1,12 +1,22 @@
 package com.app.planner.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.List;
 
 
-@Component
+
+@Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Task {
 
 	private String title;
@@ -17,14 +27,24 @@ public class Task {
 	private User assignee;
 	private List<Task> subTasks;
 
-	private TaskState currentState = new OpenState();
+
+	@Autowired
+	OpenState openState;
+
+	@Autowired
+	InprogressState inprogressState;
+
+	@Autowired
+	CompletedState completedState;
+
+	private TaskState currentState = openState;
 
 	public TaskState getSecondState() {
-		return new InprogressState();
+		return  inprogressState;
 	}
 
 	public TaskState getThirdState() {
-		return new CompletedState();
+		return completedState;
 	}
 
 	public TaskState getFourthState() {
